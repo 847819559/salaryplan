@@ -1,0 +1,57 @@
+<!-- {__NOLAYOUT__} -->
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+	<title>支付宝支付</title>
+    <base href="{:request()->domain()}" />
+    <link href="static/css/bootstrap.css" rel="stylesheet">
+    <link href="static/css/common.css" rel="stylesheet">
+    <link href="static/css/admin.css" rel="stylesheet">
+	<script src="static/js/jquery-1.12.0.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+</head>
+<body>
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<strong>多盈理财-支付宝支付</strong>
+		</div>
+		<div class="panel-body">
+			<form class="form-horizontal send-form" method="post" action="alipay" target="_blank">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">订单编号</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="orderid" value="{$order.order_sn}" readonly>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">支付标题</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="subject" value="薪计划购买支付">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">支付描述</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="body" value="在线支付">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">支付金额</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="total_fee" value="{$order.order_amount}">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-success">立即支付</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+</html>

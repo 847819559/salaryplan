@@ -1,0 +1,342 @@
+<div class="main-content">            
+    <div class="main-section page-section pg-calculator">
+    <h2 class="section-title">投资计算器</h2>
+    <div class=" ui-invest-tab">
+        <div class="container_12_1080">
+            <!-- Uplan Fixed Loanplan-->
+            <div class="ui-tab ui-tab-transparent invest-tab-title " id="calculate-tab">
+                <ul class="ui-tab-items fn-clear " id="calculate">
+                    <li data-name="J_tab_uplan" class="ui-tab-item ui-tab-item-4">
+                        <a class="ui-tab-item-link">U计划</a>
+                    </li>
+                    <li data-name="J_tab_fixed" class="ui-tab-item ui-tab-item-4">
+                        <a class="ui-tab-item-link">优选计划</a>
+                    </li>
+                    <li data-name="J_tab_fixed" class="ui-tab-item ui-tab-item-4">
+                        <a class="ui-tab-item-link">薪计划</a>
+                    </li>
+                    <li data-name="J_tab_loan" class="ui-tab-item ui-tab-item-4 ui-tab-item-current">
+                        <a class="ui-tab-item-link">散标投资</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container_12_1080" id="calculate-tab-content">
+            <div class="" id="calculate-tab-item" class="calculate-tab-item">
+                <!--U计划详情-->
+                <div id="J_tab_uplan" class="ui-tab-content" data-name="J_tab_uplan">
+                    <form class="ui-form j-card uplan-form" id="calcForm1" method="post" data-name="calculator">
+    <div class="fn-clear input-div" style="z-index:99990; position:relative;">
+        <span class="fn-left w250 align-right label">产品类型</span>
+        <div class="fn-left ui-form-item ui-form-item-nolabel last ui-selectdrop">
+            <div class="s_select_bg  clearfix J_select_btn">
+                <span class="txt J_txt">U计划 - 1月</span>
+                <span class="arrow"><i class="icon-down3"></i></span>
+                <input lockperiod="1" type="hidden" class="affix" name="UType" value="A" id="UType">
+            </div>
+            <ul style="display: none;" class="popBox selectAttach J_popBox">
+                
+                <li month="1"><span>U计划 - 1月</span></li>
+                
+                <li month="3"><span>U计划 - 3月</span></li>
+                
+                <li month="6"><span>U计划 - 6月</span></li>
+                
+                <li month="12"><span>U计划 - 12月</span></li>
+                
+                <li month="24"><span>U计划 - 24月</span></li>
+                
+            </ul>
+        </div>
+        <span class="fn-left  w208 align-right label">收益处理方式</span>
+        <div class="fn-left ui-form-item ui-form-item-nolabel last ui-selectdrop">
+            <div id="" class="s_select_bg clearfix J_select_btn">
+                <span class="txt J_txt">收益再投资</span>
+                <span class="arrow"><i class="icon-down3"></i></span>
+                <input type="hidden" class="affix" name="rType" value="INVEST" id="rType">
+            </div>
+            <ul style="display: none;" class="popBox selectAttach J_popBox ">
+                <li datavalue="INVEST" class=""><span>收益再投资</span></li>
+                <li datavalue="RRD" class=""><span>提取至账户</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="fn-clear input-div" style="z-index:999; position:relative;">
+        <span class="ui-label fn-left  w250 align-right label mt6">投资金额</span>
+        <div class="fn-left ui-form-item ui-form-item-nolabel mt6">
+            <input class="ui-input w110 new-input" type="text" id="touziAmount" name="touziAmount" data-is="istouziAmount" maxlength="10">
+            <p class="unit">元</p>
+            <label for="touziAmount" id="touziAmount-error-label" class="error" style="display: none;">投资金额范围须为1000的整数倍且不能为空</label>
+        </div>
+        <div class="submit-wrap fn-left ml224">
+            <input id="calcbt1" type="submit" class="ui-button w180 fn-left ui-button-mid mr20 j-btn j-btn-blue" value="开始计算">
+        </div>
+    </div>
+</form>
+
+
+<!--计算结果-->
+<div class="page-section result-con  j-card">
+    <div id="calcResult_u" class="calc-result-uplan ">
+        <div class="ui-box-title-new fn-clear">
+            <h2 class="J_tit section-title bd-bottom">收益描述 </h2>
+        </div>
+        <div class=" fn-clear result-info-wrap color-white-bg">
+            <dl class="fn-left result-info-item col-1-2">
+                <dt class="">- 投资金额 -</dt>
+                <dd>
+                    <span class="highlight num-family" id="J_CJJE">0.00</span>元
+                </dd>
+            </dl>
+            <div class="fn-left result-info-split"></div>
+            <dl class="fn-left result-info-item col-1-2">
+                <dt class="">- 预期收益 -</dt>
+                <dd>
+                    <span class="highlight num-family" id="J_YQSY">0.00</span>元
+                </dd>
+                <dd style="color: #cecece;font-size: 12px;">预期收益不代表实际收益</dd>
+            </dl>
+            <!--<ul class="U_detail_ul">--%>
+                <%--<li><span>投资金额</span><br><em id="J_CJJE">￥0.00</em></li>--%>
+                <%--<li><span>预期收益</span><br><em id="J_YQSY">￥0.00</em></li>--%>
+            <%--</ul>-->
+        </div>
+    </div><!--/.calcResult_u-->
+</div>
+                </div>
+                <!--优选-->
+                <div id="J_tab_premium" class="ui-tab-content" data-name="J_tab_premium">
+                    <form class="ui-form form-fixed j-card premium-form" method="post" data-name="calculator">
+    <div class="fn-clear input-div">
+        <span class="ui-label fn-left w80 label mt6">投资金额</span>
+        <div class="fn-left ui-form-item ui-form-item-nolabel mt6">
+            <input class="ui-input w110 new-input" type="text" id="premiumAmount" name="fixedAmount" data-is="isFixedAmount" maxlength="10" data-condition="12" data-start="1000" data-append="1000">
+            <p class="unit">元</p>
+            <label for="premiumAmount" id="premiumAmount-error-label" class="error" style="display: none;">金额500-20000元之间，且100的倍数</label>
+        </div>
+        <div class="submit-wrap fn-left">
+            <input id="calcbtFxied" type="submit" class="ui-button ui-button-mid mr20 j-btn j-btn-blue w230" value="开始计算">
+        </div>
+    </div>
+</form>
+
+<div class="page-section j-card premium-result" id="J_premium_result">
+    <div class="calc-result-fixed pg-calculator-content color-white-bg ">
+        <div class="ui-box-title-new fn-clear">
+            <h2 class="section-title bd-bottom">收益描述</h2>
+        </div>
+        <div class="result-table">
+            <div class="rate-wrap fn-clear">
+                <div>预期年化利率&nbsp;<span class="percent"><span>9.2</span>%</span></div>
+                <div>期限&nbsp;<span class="font-bold limit"><span>12</span>个月</span></div>
+                <div>自由期&nbsp;<span class="font-bold free-limit"><span>2</span>年</span></div>
+            </div>
+            <div class="table-wrap">
+                <table class="table">
+                    <tbody><tr class="t-header">
+                        <th>期限</th>
+                        <th>年预期收益</th>
+                        <th>日预期收益</th>
+                    </tr>
+                    <tr>
+                        <td>12个月内</td>
+                        <td class="year-res-first t-orange">--</td>
+                        <td class="day-res-first t-orange">--</td>
+                    </tr>
+                    <tr>
+                        <td>自由期第1年</td>
+                        <td class="year-res-second t-orange">--</td>
+                        <td class="day-res-second t-orange">--</td>
+                    </tr>
+                    <tr>
+                        <td>自由期第2年</td>
+                        <td class="year-res-third t-orange">--</td>
+                        <td class="day-res-third t-orange">--</td>
+                    </tr>
+                </tbody></table>
+                <div class="tip-text">预期收益不代表实际收益</div>
+            </div>
+        </div>
+    </div>
+</div>
+                </div>
+                <!--薪计划详情-->
+                <div id="J_tab_fixed" class="ui-tab-content" data-name="J_tab_fixed">
+                    <form class="ui-form form-fixed j-card salary-form" id="calcFormFixed" method="post" data-name="calculator">
+    <div class="fn-clear input-div">
+        <span class="ui-label fn-left w80 label ml75 mt6">每月投资金额</span>
+        <div class="fn-left ui-form-item ui-form-item-nolabel mt6">
+            <input class="ui-input w110 new-input" type="text" id="fixedAmount" name="fixedAmount" data-is="isFixedAmount" maxlength="10">
+            <p class="unit">元</p>
+            <label for="fixedAmount" id="fixedAmount-error-label" class="error" style="display: none;">金额500-20000元之间，且100的倍数</label>
+        </div>
+        <span class="fn-left w80 label ml58 mt6">投资期限</span>
+        <div class="fn-left ui-form-item ui-form-item-nolabel last ui-selectdrop ui-selectdrop-disabled mt6">
+            <div id="" class="s_select_bg  clearfix J_select_btn fix-month">
+                <span id="isfixMonth" data-month="12" class="txt J_txt">12个月</span>
+                <span class="arrow"><i class="icon-down3"></i></span>
+            </div>
+        </div>
+        <div class="submit-wrap fn-left ml58">
+            <input id="calcbtFxied" type="button" class="salaryplan ui-button ui-button-mid mr20 w230 j-btn j-btn-blue" value="开始计算">
+        </div>
+
+    </div>
+
+</form>
+
+
+<!--计算结果-->
+<div class="page-section result-con  j-card">
+    <div id="calcResult_fixed" class="calc-result-fixed pg-calculator-content color-white-bg ">
+        <div class="ui-box-title-new fn-clear">
+            <h2 class="section-title bd-bottom">收益描述</h2>
+        </div>
+        <div class=" fn-clear result-info-wrap color-white-bg">
+            <dl class="fn-left result-info-item">
+                <dt>- 总投资金额 -</dt>
+                <dd>
+                    <span id="isFixAount" class="highlight num-family">0.00</span>元
+                </dd>
+            </dl>
+            <div class="fn-left result-info-split"></div>
+            <dl class="fn-left result-info-item">
+                <dt>- 预期年化利率 -</dt>
+                <dd>
+                    <span id="isFixRate" class="highlight num-family">8</span>%
+                </dd>
+            </dl>
+            <div class="fn-left result-info-split"></div>
+            <dl class="fn-left result-info-item">
+                <dt>- 预期收益 -</dt>
+                <dd>
+                    <span id="isFixEarn" class="highlight num-family">0.00</span>元
+                </dd>
+            </dl>
+
+        </div>
+        <div class="result-tip section-padding">注：预期年化利率仅供参考，因存在延期支付及资金闲置等因素，最终收益会与预期有所偏差，请以实际为准。</div>
+
+    </div>
+</div>
+
+    <!-- 薪计划 投资计算 -->
+<script>
+$('.salaryplan').on('click',function(){
+
+    var price = $('#fixedAmount').val(); //月投资金额
+    var cate = $('#isFixRate').html();  //利率
+    var fixMonth = $('#isfixMonth').attr('data-month'); //投资月份
+    var yearRate = price*fixMonth; //总投资金额
+    
+    $.ajax({
+        url:'XJH-calculation',
+        data:{price:price,cate:cate,fixMonth:fixMonth},
+        Type:'POST',
+        success:function(data){
+            $('#isFixAount').html(yearRate);
+            $('#isFixEarn').html(data);
+        }
+    })
+    
+})
+</script>
+
+
+
+                </div>
+                <!--散标投资详情-->
+                <div id="J_tab_loan" class="ui-tab-content ui-tab-content-current" data-name="J_tab_loan">
+                    <!--散标投资-->
+<form class="ui-form pleft20 j-card loan-form" id="calcForm" method="post" data-name="calculator">
+    <div class="fn-clear input-div">
+        <span class="ui-label fn-left w80 label">出借金额</span>
+        <div class="fn-left w240 ui-form-item ui-form-item-nolabel">
+            <input class="ui-input w110 new-input" type="text" id="borrowAmount" name="borrowAmount" data-is="isBorrowAmount" maxlength="10">
+            <p class="unit">元</p>
+            <label for="borrowAmount" id="borrowAmount-error-label" class="error" style="display: none;">出借金额范围须为50的倍数</label>
+        </div>
+        <span class="fn-left w80 label new-column">年化利率</span>
+        <div class="fn-left w240 ui-form-item ui-form-item-nolabel last">
+            <input class="ui-input w110 new-input" type="text" id="yearRate" name="yearRate" data-is="isOneDecimal isRateOver" maxlength="10">
+            <p class="unit">%</p>
+            <label for="yearRate" id="yearRate-error-label" class="error" style="display: none;">您输入的借款年利率超出范围，请重新输入！</label>
+        </div>
+    </div>
+    <div class="fn-clear input-div">
+        <span class="fn-left w80 label mt6">借款期限</span>
+        <div class="fn-left ui-form-item ui-form-item-nolabel mt6">
+            <input class="ui-input w110 new-input" type="text" value="" id="repayDate" name="repayDate" data-is="isIntNum isRepayDate" maxlength="10">
+            <p class="unit">个月</p>
+            <label for="repayDate" id="repayDate-error-label" class="error" style="display: none;">借款期限须为1-48个月</label>
+        </div>
+        <span class="fn-left w80 label new-column mt6">还款方式</span>
+        <div class="fn-left ui-form-item ui-form-item-nolabel last ui-selectdrop mt6">
+            <div id="" class="s_select_bg clearfix J_select_btn">
+                <span class="txt J_txt">等额本息</span>
+                <span class="arrow"><i class="icon-down3"></i></span>
+                <input type="hidden" class="affix" name="repayType" value="DEBX" id="repayType">
+            </div>
+            <ul style="display: none;" class="popBox selectAttach J_popBox ">
+                <li datavalue="DEBX" class=""><span>等额本息</span></li>
+                <li datavalue="FXHB" class=""><span>每月付息，到期还本</span></li>
+            </ul>
+        </div>
+        <div class="fn-left submit-wrap">
+            <input type="checkbox" id="isShowTable" name="isShowTable" checked="checked" value="true">
+            <input type="hidden" name="mgmtAmount" value="0.3">
+            <input id="calcbt" type="submit" class="ui-button ui-button-mid j-btn j-btn-blue" value="开始计算">
+        </div>
+    </div>
+</form>
+
+<!--计算结果-->
+<div class="page-section result-con  j-card">
+    <div id="calcResult" class=""></div>
+    <div id="J_calculator-article" class="section-padding calculator-article ">
+        <ul class="text-small">
+            <li><em>等额本息</em>，即借款人每月以相等的金额偿还借款本息，也是银行房贷等采用的方法。因计算中存在四舍五入，最后一期还款金额与之前略有不同。</li>
+            <li><em>每月付息，到期还本</em>，即借款人每月偿还固定利息，最后一期偿还全部本金。</li>
+            <li><em>注</em>：因计算器采用了以50元为一份的计算方式，计算结果与2013年10月14日之前的债权存在偏差，具体情况以账户中显示的信息为准。</li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        </div>
+<script>
+    /**
+     * 更改计划介绍数据 
+     */
+    $(document).on("click",'.ui-tab-items li',function () {
+        var _index = $(this).index();
+        var _ul = $(".ui-tab-items");
+        var _detail = $(".ui-tab-content");
+        // 更改样式
+        $(this).addClass('ui-tab-item-current');
+        $(this).siblings().removeClass('ui-tab-item-current');
+        // 更改显示数据
+        _detail.eq(_index).show();
+        _detail.eq(_index).siblings().hide();
+    }) 
+
+
+
+    
+    
+</script>
+
+<div class="j-dialog" style="display: none; width: 350px; z-index: 9999;"><header class="j-dialog-title-con" style="height: 0px;"><h1 class="j-dialog-title"></h1><span class="j-dialog-close-btn">×</span></header><div class="j-dialog-header" style="display: none;"></div><div class="j-dialog-content"><div id="weixin-content" class="p20 text-center">
+        <img src="./as_files/weixin_rrd_5b83f9c.jpg" style="width:250px">
+        <p>微信扫一扫，人人贷理财里动态全知道！</p>
+    </div></div><div class="j-dialog-btn-con" style="display: none;"></div><div class="j-dialog-footer" style="display: none;"></div></div></body></html>

@@ -1,0 +1,93 @@
+.autoinvest-buy-main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 9998;
+}
+
+.autoinvest-buy-form {
+    width: 660px;
+    background: #fff;
+    position: absolute;
+    left: 50%;
+    margin-left: -350px;
+    top: 0;
+    z-index: 9999;
+    padding: 20px 20px 0;
+}
+.form-content {
+    padding: 36px 0 0 75px;
+}
+
+.autoinvest-buy-form .form-header {
+    position: relative;
+}
+
+.autoinvest-buy-form .form-header .form-title {
+    color: #333;
+    font-size: 16px;
+}
+
+.form-header .dialog-close-btn {
+    position: absolute;
+    right: 0;
+    top: -14px;
+    color: #979797;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.pay-form{
+    width: 585px;
+    height: 440px;
+}
+
+.pay-form div{
+    width: 585px;
+    height: 44px;
+}
+
+.form-content .pay-form .l-title {
+    display: inline-block;
+    width: 90px;
+    font-size: 14px;
+    color: #BABABA;
+}
+.form-footer {
+    text-align: center;
+}
+.form-footer div.submit {
+    width: 330px;
+    margin-top: 13px;
+    margin-bottom: 40px;
+    color: #fff;
+    background: #FF721F;
+
+    display: inline-block;
+    height: 42px;
+    line-height: 42px;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.form-footer .add-tip {
+    text-align: left;
+    background: #fafafa;
+    color: #848484;
+    padding: 20px 0 20px 40px;
+    bottom: 0;
+    left: 0;
+    width: 660px;
+    margin-left: -20px;
+    font-size: 12px;
+}
+.form-footer .add-tip .title {
+    color: #2b2b2b;
+    line-height: 17px;
+}
+.form-footer .add-tip .msg {
+    line-height: 22px;
+}

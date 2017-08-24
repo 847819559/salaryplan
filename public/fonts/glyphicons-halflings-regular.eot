@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+  <title>人人贷 - 定义你自己的金融，中国3A信用评级互联网理财借贷平台</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="google-site-verification" content="oQXrGa_mTgxg7joO0himE0QuFeqOVmm-SDC1H2dzT4c">
+  <meta name="keywords" content="人人贷,贷款平台,网上贷款,借款,借贷,贷款,p2p贷款平台,小额贷款平台">
+  <meta name="description"
+        content="人人贷(www.renrendai.com) - 定义你自己的金融，中国3A信用评级互联网理财借贷平台，为投资理财用户和贷款用户两端提供公平、透明、安全、高效的互联网金融服务。投资理财用户可以通过人人贷平台进行投标、加入优选理财计划、购买债权等方式进行投资获得高收益；贷款用户可以通过平台申请工薪贷、生意贷、网商贷等小额贷款。">
+  <link rel="shortcut icon" href="assets/images/favicon.ico?icoversion=2">
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/css/bootstrap.min.css"/>
+  <script src="assets/vendor/jquery.min.js"></script>
+  
+<link rel="stylesheet" href="assets/stylesheets/less/main.css">
+<style>
+.fail-container{
+  padding:70px 0;
+  text-align: center;
+}
+.fail-container img{
+  width:600px;
+}
+</style>
+
+  
+</head>
+
+<body style="visibility: hidden;">
+<div class="header">
+  <div class="content">
+    <div class="row" style="margin:0px;">
+      <a href="index.html">
+        <div class="logo left"></div>
+      </a>
+      <div class="navbar right">
+        <ul>
+          <!--<li class="index-link" style="margin-left:0px;"><a href="index.html" >首页</a>-->
+          <!--</li>-->
+          <li><a href="https://www.loanrenrendai.com/index/index.html">我要借款</a>
+          </li>
+          <li><a href="http://www.renrendai.com/" target="_blank" rel="nofollow">我要理财</a>
+          </li>
+          <li><a href="https://www.loanrenrendai.com/security.html" style="display: none;">安全保障</a>
+          </li>
+          <li id="mobileApp"><a href="javascript:void(0);">手机客户端</a>
+            <div class="menuContent" style="display: none;">
+              <ol>
+                <li class="first">
+                  <div class="left">
+                    <div class="app-icon renrendai"></div>
+                    <div class="app-name">人人贷借款APP</div>
+                  </div>
+                  <div class="app-qrcode right"></div>
+                </li>
+                <li class="last">
+                  <div class="left">
+                    <div class="app-icon welicai"></div>
+                    <div class="app-name">人人贷理财APP</div>
+                  </div>
+                  <div class="app-qrcode wlc right"></div>
+                </li>
+              </ol>
+              <div class="top-arrow">
+                <em></em>
+                <ins></ins>
+              </div>
+            </div>
+          </li>
+          <li><a href="http://www.renrendai.com/pc/about/rrd" target="_blank">关于我们</a>
+          </li>
+          <li class="old_back"><a href="https://www.loanrenrendai.com/loginPage.action" target="_blank" id="login">登录还款</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var Debounce = function (fn, scope, args) {
+    var me = this,
+      id,
+      call = function () {
+        clearInterval(id);
+        id = null;
+        fn.apply(scope, args || []);
+      };
+
+    me.delay = function (delay, newFn, newScope, newArgs) {
+      me.cancel();
+      fn = newFn || fn;
+      scope = newScope || scope;
+      args = newArgs || args;
+      id = setInterval(call, delay);
+    };
+
+    me.cancel = function () {
+      if (id) {
+        clearInterval(id);
+        id = null;
+      }
+    };
+  };
+
+  var Throttle = function (fn, scope, args) {
+    var me = this,
+      id,
+      call = function () {
+        clearInterval(id);
+        id = null;
+        fn.apply(scope, args || []);
+      };
+
+    me.delay = function (delay, newFn, newScope, newArgs) {
+      me.cancel();
+      fn = newFn || fn;
+      scope = newScope || scope;
+      args = newArgs || args;
+      id = setInterval(call, delay);
+    };
+
+    me.cancel = function () {
+      if (id) {
+        clearInterval(id);
+        id = null;
+      }
+    };
+  };
+
+  $(function () {
+    var debounceAppDisplay = new Debounce(function (bshow) {
+      if (bshow) {
+        $('.menuContent').show();
+      } else {
+        $('.menuContent').hide();
+      }
+    });
+
+    $('#mobileApp,.menuContent').on('mouseenter', function (e) {
+      debounceAppDisplay.delay(0, null, null, [true]);
+    }).on('mouseleave', function (e) {
+      debounceAppDisplay.delay(500, null, null, [false]);
+    });
+  });
+</script>
+
+
+
+<div class="main-container" id="binding">
+  <div class="fail-container">
+    <img src="assets/images/404.png">
+  </div>
+</div>
+
+
+
+<div class="footer">
+  <div class="content split" style="padding: 40px 0px 20px 0px;">
+    <div class="left" style="width:48%;">
+      <div class="left" style="margin-right:15px;">友情链接：</div>
+      <div class="">
+        <ul class="clear">
+          <li class="fn-left">
+            <a class="gray" target="_blank" rel="nofollow" href="https://www.renrendai.com">人人贷理财</a>
+          </li>
+          <li class="fn-left">
+            <a class="gray" target="_blank" rel="nofollow" href="https://www.rong360.com">融360</a>
+          </li>
+          <li class="fn-left">
+            <a class="gray" target="_blank" rel="nofollow" href="http://www.dimeng.net">网贷系统</a>
+          </li>
+          <li class="fn-left">
+            <a class="gray" target="_blank" rel="nofollow" href="http://www.p2peye.com">网贷天眼</a>
+          </li>
+          <li class="fn-left">
+            <a class="gray" target="_blank" rel="nofollow" href="http://www.wdzj.com">网贷之家</a>
+          </li>
+          <li class="fn-left">
+            <a class="gray" target="_blank" rel="nofollow" href="http://www.wangdaiabc.cn">网贷ABC</a>
+          </li>
+          <!--<li class="fn-left">-->
+            <!--<a class="gray" target="_blank" rel="nofollow" href="http://www.wquant.com">微量网</a>-->
+          <!--</li>-->
+          <!--<li class="fn-left">-->
+            <!--<a class="gray" target="_blank" rel="nofollow" href="http://www.diyou.cn">网贷系统</a>-->
+          <!--</li>-->
+          <!--<li class="fn-left">-->
+            <!--<a class="gray" target="_blank" rel="nofollow" href="http://jiaohang.kameng.com ">交通银行</a>-->
+          <!--</li>-->
+          <!--<li class="fn-left">-->
+            <!--<a class="gray" target="_blank" rel="nofollow" href="http://www.rongebang.com">融e邦</a>-->
+          <!--</li>-->
+          <!--<li class="fn-left">-->
+            <!--<a class="gray" target="_blank" rel="nofollow" href="http://www.xwjr.com/">希望金融</a>-->
+          <!--</li>-->
+          <!--<li class="fn-left">-->
+            <!--<a class="gray" target="_blank" rel="nofollow" href="http://www.btctrade.com">比特币</a>-->
+          <!--</li>-->
+          <!--<li class="fn-left">-->
+            <!--<a class="gray" target="_blank" rel="nofollow" href="http://www.ppdai.com">拍拍贷</a>-->
+          <!--</li>-->
+        </ul>
+        <ul class="fn-clear" style="padding:0px;">
+          <li class="fn-left">
+            <a class="gray" href="http://www.renrendai.com/pc/about/rrd/contact" target="_blank">联系我们</a>
+          </li>
+          <li class="fn-left">
+            <a class="gray" href="http://www.renrendai.com/pc/about/rrd" target="_blank">公司介绍</a>
+          </li>
+          <li class="fn-left">
+            <a class="gray" href="http://bbs.we.com" target="_blank">人人贷论坛</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="contacts right">
+      <ul>
+        <li><span class="label">人人贷借款App咨询</span><span>400-699-3906</span><span class="small-label">（服务时间9:00-21:00）</span></li>
+        <li><span class="label">借款咨询</span><span>400-696-6000</span><span class="small-label">（服务时间9:00-18:00）</span></li>
+        <li><span class="label">WE理财咨询</span><span>400-090-6600</span><span class="small-label">（服务时间9:00-21:00）</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content" style="clear: both; padding-bottom: 20px;">
+    <div class="text-center" style="padding: 10px 0px;">© 2016 人人贷 All rights reserved 人人贷商务顾问(北京)有限公司 京ICP证 100953号
+      京ICP备12025643号-6
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  $('body').css({visibility: 'visible'});
+</script>
+<script>
+  var _hmt = _hmt || [];
+  (function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?18fba79a3779e109646833e2e02b584b";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-96121189-2', 'auto');
+  ga('send', 'pageview');
+  /*
+   * 统计操作类
+   * */
+  var statUtil = {
+    trackEvent: function (eventCategory, eventAction, eventLabel, eventValue) {
+      _hmt.push(['_trackEvent', eventCategory, eventAction, eventLabel, eventValue]);
+      ga('send', 'event', eventCategory, eventAction, eventLabel, eventValue);
+    }
+  };
+</script>
+
+
+
+
+</body>
+</html>

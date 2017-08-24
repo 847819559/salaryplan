@@ -1,0 +1,317 @@
+   <div class="main-content">
+
+            
+	<div class="autoinvest-product">
+		<div class="status-wrap" data-autoinvest-id="20558" data-nickname="" data-count="" data-invest-day="4">
+    <div class="title">
+        <div class="name">{$taday_salaryplan_list.product_name}</div>
+        <a class="agreement-link" href="agreement?product_id={$taday_salaryplan_list.id}" target="_blank">{$taday_salaryplan_list.product_name}协议（范本）</a>
+    </div>
+    <div class="status">
+        <div class="left-detail">
+            <div class="top clear">
+                <div class="year-rate">
+                    <div class="percent"><span>{$taday_salaryplan_list.rate}</span>%</div>
+                    <div class="text">预期年化利率<em id="product-autoinvest-tooltip-rate"></em> </div>
+                </div>
+                <div class="deadline">
+                    <div class="month"><span>{$taday_salaryplan_list.deadline}</span>个月</div>
+                    <div class="text">投资期限</div>
+                </div>
+                <div class="date">
+                    <div class="day"><span>{$taday_salaryplan_list.day}</span>日</div>
+                    <div class="text">每月投资日</div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="protect-method">保障方式&nbsp;&nbsp;<span>100%适用</span><a href="https://www.renrendai.com/pc/about/rrdHelp/protection/cmsId/58eee27251c5a309752c2dea" target="_blank">用户利益保障机制</a></div>
+                <div class="exit-date">退出日期<span>{$taday_salaryplan_list.outDay}</span></div>
+                <div class="invest-month">月投资金额<span>500-20,000元</span><em id="product-autoinvest-tooltip-invest"></em></div>
+                <div class="method">收益处理方式<span>收益再投资</span></div>
+            </div>
+        </div>
+
+
+        {if condition="$taday_salaryplan_list.product_status eq 0"}
+        <div class="right-status">           
+            <div class="remaining">  
+                <div class="s-title">             
+                    {if condition="$Think.session.user_id neq null"}
+                    <div class="available-amount">账户余额<span class="amount">0.00</span><span class="unit">元</span> <a href="/pc/user/trade/recharge" target="_blank">充值</a></div>
+                    {else /}
+                    <div class="account-tip">账户余额 <a href="login_index">登录</a> 后可见</div>
+                    {/if}   
+                </div>        
+                <div class="time" id="J_WAIT_BUTTON" data1="4677" data2="0" style="letter-spacing: 0px;">{$getTime.codeInfo}</div>
+                <div class="text">开放倒计时</div>
+                <div class="remain-count">
+                    <span class="current"> 200</span>/<span>200人</span>
+                    <div>剩余名额</div>
+                </div>
+            </div>         
+        </div>
+        <script>
+            //倒计时
+              //var starttime = new Date();
+              var d = new Date();
+              //获取 当前 年月日
+              var str = d.getFullYear()+"/"+(d.getMonth()+1)+"/"+d.getDate();
+              var starttime = new Date(str+' 10:30:00');
+              var interval = setInterval(function () {
+                var nowtime = new Date();
+                var time = starttime - nowtime;
+                if(time < 1){
+                    location.href='salaryplan';
+                    clearInterval(interval);
+                } else {
+                    var hour = parseInt(time / 1000 / 60 / 60 % 24);
+                    var minute = parseInt(time / 1000 / 60 % 60);
+                    var seconds = parseInt(time / 1000 % 60);
+                    $('#J_WAIT_BUTTON').html(hour + "时" + minute + "分" + seconds + "秒");
+                }
+                
+              }, 1000);
+        </script>
+        {elseif condition="$taday_salaryplan_list.product_status eq 1"/}
+        <div class="right-status">     
+            <div class="enable-status">
+                
+                <div class="s-title">
+                    {if condition="$Think.session.user_id neq null"}
+                    <div class="available-amount">账户余额<span class="amount">0.00</span><span class="unit">元</span> <a href="/pc/user/trade/recharge" target="_blank">充值</a></div>
+                    {else /}
+                    <div class="account-tip">账户余额 <a href="login_index">登录</a> 后可见</div>
+                    {/if}
+                </div>
+                <div class="amount-ipt" >
+                    <input type="text"  id="salaryplan-product-buy-amount" data-min="500" data-max="20000" data-increment-money="100" placeholder="500元起投，递增金额100元" />                          
+                    <span class="unit">元</span>
+                </div>
+                <span class="ipt-tip" id="autoinvest-product-input-tip" style="display: inline;"></span>
+                <div class="statistics fn-clear">
+
+                    <div class="remain">剩余名额 <span class="current">{$surplus_num}</span>/<span>200人</span></div>
+                </div>                                
+                <div class="join-btn" id="salaryplan-product-input" data-continue-join="false" data-lock-period="12" data-rate="8" data-invest-day="4" data-autoinvest-name="薪计划170804期" data-account-money="">立即加入</div>
+            </div>          
+        </div> 
+        {else /}
+        <div class="right-status">         
+            <div class="exited">
+                <div class="profit num-family">0.00<span class="unit">元</span></div>
+                <div class="text">已获收益</div>
+                <img class="exit" src="//www.we.com/cms/5864b0d6a24d131067ef7956/uplan/stamp/INCOME.png">
+            </div>  
+        </div>
+        {/if}
+        <input type="hidden" class="product_id" value="{$taday_salaryplan_list.id}"> 
+    </div>
+</div>
+		<div class="introduce clear">
+    <div>
+        <div class="icon"><img class="first" src="picture/first_be29191_1.png"/></div>
+        <div class="title">工资理财 不再月光</div>
+        <div class="sub-title">500-20,000元，每月固定投资金额到期退出后可攒6,000-240,000元</div>
+    </div>
+    <div>
+        <div class="icon"><img class="second" src="picture/second_7d0d2ec_1.png"/></div>
+        <div class="title">每月定投，积少成多</div>
+        <div class="sub-title">资金高度利用，利息循环出借预期年化利率8%以上</div>
+    </div>
+    <div>
+        <div class="icon"><img class="third" src="picture/third_73c7c1c_1.png"/></div>
+        <div class="title">多重安全保障措施</div>
+        <div class="sub-title">资金分散用于100%适用用户利益保障机制的借款标的</div>
+    </div>
+    <div class="fourth-wrap">
+        <div class="icon"><img class="fourth" src="picture/fourth_d0d7c7c_1.png"/></div>
+        <div class="title">等你加入</div>
+        <div class="sub-title">每日上午10:30开放</div>
+    </div>
+</div>
+		<div>
+    <div class="tab-bar">
+        <div class="table-item active">计划介绍</div>
+        <div class="center-tab">加入记录</div>
+        <div>常见问题</div>
+    </div>
+    <div class="content">
+        <div class="plan-introduce active">
+    <div class="name fn-clear">
+        <div class="t-introduce">名称</div>
+        <div>{$taday_salaryplan_list.product_name}</div>
+    </div>
+    <div class="intro fn-clear even">
+        <div class="t-introduce">计划介绍</div>
+        <div class="introduce-text">薪计划是人人贷针对工薪族投资需求量身打造的高效自动投标工具。用户可在每月固定日期支付固定金额的出借资金（每月加入金额由初次加入时确定，后续月份不支持修改），系统对用户支付的月出借资金在用户认可的标的范围内，对符合要求的标的进行自动出借，回款本息在相应期限内再进行自动出借，锁定期限结束后通过平台债权转让系统进行转让退出。薪计划所对应的标的均100%适用于人人贷用户利益保障机制并由系统实现标的分散出借。预期收益不等于实际收益，出借人需自行承担资金出借的风险与责任；市场有风险，投资需谨慎。</div>
+    </div>
+    <div class="range fn-clear">
+        <div class="t-introduce">投标范围</div>
+        <div>机构担保标,实地认证标</div>
+    </div>
+    <div class="method fn-clear even">
+        <div class="t-introduce">收益处理方式</div>
+        <div>收益再投资</div>
+    </div>
+    <div class="rate fn-clear">
+        <div class="t-introduce">预期年收益</div>
+        <div>8%</div>
+    </div>
+    <div class="invest-day fn-clear even">
+        <div class="t-introduce">每月投资日</div>
+        <div>每月4号（若当月没有该日，则投资日为当月最后一天，节假日不顺延）</div>
+    </div>
+    <div class="invest-money fn-clear">
+        <div class="t-introduce">月投资金额</div>
+        <div>
+            <p>月投资金额500元起，且以100元整数倍递增，上限20,000元。</p>
+            <p class="orange">月投资金额由加入时确定，一经选定，后续月份不支持修改。</p>
+        </div>
+    </div>
+    <div class="invest-method fn-clear even">
+        <div class="t-introduce">每月投资方式</div>
+        <div>用户充值至人人贷账户后，主动操作投资/系统在投资日自动划扣。</div>
+    </div>
+    <div class="limit fn-clear">
+        <div class="t-introduce">投资期限</div>
+        <div>12个月</div>
+    </div>
+    <div class="limit-day fn-clear even">
+        <div class="t-introduce">到期日</div>
+        <div>{$taday_salaryplan_list.outDay}</div>
+    </div>
+    <div class="exit-method fn-clear">
+        <div class="t-introduce">到期退出方式</div>
+        <div>系统将通过债权转让自动完成退出，您所持债权转让的具体时间，视债权转让市场交易情况而定。</div>
+    </div>
+    <div class="early-exit fn-clear even">
+        <div class="t-introduce">提前退出</div>
+        <div class="orange">不支持</div>
+    </div>
+    <div class="fee fn-clear">
+        <div class="t-introduce">费用</div>
+        <div>
+            <div>加入费用：<span class="orange">0.0%</span></div>
+            <div>退出费用：<span class="orange">0.0%</span></div>
+            <div>管理费用：参见<a href="agreement?product_id={$taday_salaryplan_list.id}" target="_blank">《薪计划服务协议》</a></div>
+            <div>延期投资费用：参见<a href="agreement?product_id={$taday_salaryplan_list.id}" target="_blank">《薪计划服务协议》</a></div>
+        </div>
+    </div>
+    <div class="safety fn-clear even">
+        <div class="t-introduce">保障方式</div>
+        <div>100%用户利益保障机制</div>
+    </div>
+    <div class="agreement fn-clear">
+        <div class="t-introduce">服务协议</div>
+        <div><a href="agreement?product_id={$taday_salaryplan_list.id}" target="_blank">点击查看</a></div>
+    </div>
+</div>
+        <div class="join-record">
+    <div class="statistics">加入总人次{$taday_order_list.count}人，人均月投资金额{$taday_order_list.average}元</div>
+    <div class="table-wrap">
+        <div class="data-header fn-clear">
+            <div class="index">序号</div>
+            <div class="name">投资人</div>
+            <div class="invest-money">月投资金额</div>
+            <div class="source">来源</div>
+            <div class="join-time">加入时间</div>
+        </div>
+        <!-- 加入记录 start -->
+        <div id="autoinvest-product-join-record">
+            
+        </div>
+        <!-- 加入记录 end -->
+    </div>
+</div>
+        <div class="question">
+    <ul class="list">
+        <li class="first-item">
+            <h3>Q1：什么是薪计划？</h3>
+            <div>薪计划是人人贷WE理财针对工薪族推出的高效、便捷的自动投标工具，每月固定日期加入固定资金，轻松攒钱，积累财富，尽早实现个人心愿。</div>
+        </li>
+        <li>
+            <h3>Q2：薪计划的发布时间？</h3>
+            <div>每日上午10:30开放</div>
+        </li>
+        <li>
+            <h3>Q3：薪计划的收益有多少？</h3>
+            <div>预期年化收益率8%，但根据系统自动投标的标的利率不同和借款人的实际履约情况不同，每个投资人的实际收益率存在小许差异。</div>
+        </li>
+        <li>
+            <h3>Q4：投资利息收益处理方式？</h3>
+            <div>薪计划的投资利息所获收益处理方式是收益再投资，所得利息会自动循环复投，充分实现复利效应</div>
+        </li>
+        <li>
+            <h3>Q5：薪计划的期限有多久？</h3>
+            <div>薪计划的锁定期为12个月，在锁定期内薪计划的回款本息由系统自动实现循环复投，充分提高资金利用效率，锁定期结束后，自动通过债权转让退出。薪计划不支持提前退出</div>
+        </li>
+        <li>
+            <h3>Q6：到了每月投资日如何支付？</h3>
+            <ul class="how-invest">
+                <li><b>&nbsp;系统自动划扣：</b>您可以在每月投资日前将相应金额充值到民生银行存管账户，在月投资日当天24:00系统会从您的民生银行存管账户中自动划扣完成支付。</li>
+                <li><b>&nbsp;手动支付：</b>每月投资日的前3天，您也可以在充值后手动进行支付；进入【我的账户】-【账户总览】-【薪计划】，选择您要支付的一期薪计划，点击【支付】，跳转到【支付】详情页后，点击【确定】按钮即可支付完成。</li>
+                <li><b>&nbsp;手动补充支付：</b>若您在某月未能按时投资当月投资金额，可在下月投资日前进行补充支付；进入【我的账户】-【账户总览】-【薪计划】，选择您要补充支付的薪计划，点击【补支付】，跳转【补充加入】详情页后，点击【确定】按钮即可补充支付完成。 您支付的每月投资金额，均将进入您民生银行存管账户，并由系统按照约定为您进行自动投资。</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Q7：每月投资日和每月投资金额是否支持修改？</h3>
+            <div><b>不支持修改。</b>每月投资日和每月投资金额由首次加入薪计划时确定，后续各月需要支付并由系统为您自动投资相同金额。请您在充分考虑自身理财需求后慎重决定。</div>
+        </li>
+        <li class="last-item">
+            <h3>Q8：如果未能按时支付每月投资金额会有什么影响？</h3>
+            <div>若您的薪计划累计延期超过10天，则会产生相应延期费用，具体请参考<a href="//www.renrendai.com/pc/about/rrdHelp/topic/p/investment/fn/58734a531538f40e2773639a">薪计划延期费用。</a></div>
+        </li>
+    </ul>
+    <div class="tip">人人贷理财仅为信息发布平台，未以任何明示或暗示的方式对出借人提供担保或承诺保本保息，出借人应根据自身的投资偏好和风险承受能力进行独立判断和作出决策，并自行承担资金出借的风险与责任。市场有风险，投资需谨慎。</div>
+</div>
+    </div>
+</div>
+
+    <!-- 历史期数与收益 start -->
+		<div class="history">
+    <div class="title">
+        <div class="name">历史期数与收益</div>
+    </div>
+    <div class="history-list">
+        <div class="history-list-header fn-clear">
+            <div class="t-name">薪计划</div >
+            <div class="t-count ">加入人次</div>
+            <div class="t-money">已加入金额</div>
+            <div class="t-rate">预期年化利率</div>
+            <div class="t-profit">累计利息收益</div>
+            <div class="t-status">状态</div>
+        </div>
+        
+        {volist name="salaryplan_list" id="val"}
+        <div class="history-list-data fn-clear even">
+            <div class="name"><a href="salaryplan?product_id={$val.id}" target="_blank">{$val.product_name}</a></div>
+            <div class="count">{$val.count ?? '0'}人</div>
+            <div class="money">
+            {$val.num ?? '0'}元
+            </div>
+            <div class="rate orange">{$val.rate}%</div>
+            <div class="profit">0.00元</div>
+            <div class="status">
+                {if condition="$val.product_status == 0"}
+                <span class="orange">等待加入中</span>
+                {elseif condition="$val.product_status == 1"/}
+                <a href="salaryplan?product_id={$val.id}" class="join-btn">立即加入</a>
+                {elseif condition="$val.product_status == 2"/}
+                <span class="orange">收益中</span>
+                {else /}
+                <span class="orange">收益完成</span>
+                {/if}
+            </div>
+        </div>
+        {/volist}
+    </div>
+</div>
+	</div>
+        </div>
+    <!-- 历史期数与收益 end -->
+    <div id="box"></div>
+    
+
+    <script type="text/javascript" src="js/mod_f76e019_1.js"></script>
+    <script type="text/javascript" src="js/salaryplan.js"></script>
+
